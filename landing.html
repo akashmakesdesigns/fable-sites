@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Five websites, one model</title>
+<meta name="description" content="Five concept websites designed and built by Claude Fable 5.2, including two with scroll-driven 3D exploded views." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #101223; color: #eceef2; font: 400 18px/1.5 "Bricolage Grotesque", system-ui, sans-serif; padding: clamp(20px, 5vw, 72px); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  h1 { font-weight: 700; font-variation-settings: "wdth" 78; font-size: clamp(48px, 9vw, 140px); line-height: .9; letter-spacing: -0.035em; max-width: 11ch; }
+  header p { margin: 26px 0 clamp(40px, 7vw, 90px); max-width: 52ch; color: #b9bdd0; }
+  ol { list-style: none; padding: 0; border-top: 2px solid #eceef2; }
+  a { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr) auto; gap: 24px; align-items: baseline; padding: 22px 0; border-bottom: 2px solid #eceef2; color: inherit; text-decoration: none; transition: background .25s, color .25s, padding .25s; }
+  a:hover, a:focus-visible { background: var(--c); color: #101223; padding-left: 18px; padding-right: 18px; outline: none; }
+  a b { font-weight: 700; font-variation-settings: "wdth" 80; font-size: clamp(30px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.03em; }
+  a span { max-width: 44ch; }
+  a small { font-size: 15px; white-space: nowrap; opacity: .8; }
+  footer { margin-top: 40px; font-size: 15px; color: #8d92ab; max-width: 70ch; }
+  @media (max-width: 760px) { a { grid-template-columns: 1fr; gap: 6px; } }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Five websites, one model</h1>
+    <p>Each of these was invented, designed and built by Claude Fable 5.2 from a single prompt: the company, the copy, the layout and the code. The last two take a product apart in 3D as you scroll.</p>
+  </header>
+  <ol>
+    <li><a href="./counterpunch/" style="--c:#ffb703"><b>Counterpunch</b><span>A type foundry whose headline changes weight under your cursor.</span><small>~$1.10, 2 min 18 s</small></a></li>
+    <li><a href="./pith/" style="--c:#ff5a1f"><b>Pith</b><span>Sparkling citrus. Pick a flavour and the whole page recolours.</span><small>~$1.20, 2 min 56 s</small></a></li>
+    <li><a href="./nadir/" style="--c:#f0a66b"><b>Nadir Lodge</b><span>A dark-sky lodge. Scrolling holds the shutter open on the stars.</span><small>~$1.30, 3 min 1 s</small></a></li>
+    <li><a href="./oriel/" style="--c:#c8a25a"><b>Oriel 38</b><span>A mechanical watch that comes apart layer by layer in 3D.</span><small>~$2.00, 7 min 27 s</small></a></li>
+    <li><a href="./tacta/" style="--c:#b9f2d0"><b>Tacta 75</b><span>A keyboard in seven 3D layers. Type and its keys follow.</span><small>~$2.10, 6 min 47 s</small></a></li>
+  </ol>
+  <footer>Costs are estimates of API spend and times are wall-clock generation time. All five brands are fictional and every visual is drawn in code, with no generated images.</footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pith. Sparkling citrus, peel and all</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body data-flavour="orange">
+  <header class="nav">
+    <a href="#top" class="logo" aria-label="Pith home">pith<i></i></a>
+    <nav>
+      <a href="#inside">What's inside</a>
+      <a href="#flavours">Flavours</a>
+      <a href="#how">How we make it</a>
+      <a href="#mix">Build a box</a>
+    </nav>
+    <a class="basket" href="#mix">Basket <b id="basketN">0</b></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <canvas id="bubbles" aria-hidden="true"></canvas>
+      <div class="hero-word" id="heroWord" aria-hidden="true">blood orange</div>
+      <div class="hero-can-wrap">
+        <div class="can can-xl" id="heroCan"></div>
+        <div class="sticker" id="sticker"><span>whole<br/>fruit<br/>pressed</span></div>
+      </div>
+      <div class="hero-copy">
+        <h1>Sparkling citrus,<br/>peel and all.</h1>
+        <p id="heroNote">We press the whole blood orange, skin included, so you get the bitter edge that juice leaves behind. Then water, bubbles and a pinch of sea salt. That's the can.</p>
+        <a class="btn" href="#mix">Build a box of 12</a>
+      </div>
+      <div class="picker" role="radiogroup" aria-label="Choose a flavour" id="picker"></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <section class="inside" id="inside">
+      <div class="inside-left">
+        <h2>Three things go in. You can pronounce all of them.</h2>
+        <ul class="things">
+          <li><span class="thing-art" data-art="fruit"></span><div><h3>One whole fruit</h3><p>Pressed with the peel on. The pith is where the bitterness lives, and bitterness is what makes it taste like a drink for grown-ups.</p></div></li>
+          <li><span class="thing-art" data-art="water"></span><div><h3>Sparkling water</h3><p>From a spring in the Mendips, carbonated hard. 4.2 volumes of CO₂, which is closer to champagne than to cola.</p></div></li>
+          <li><span class="thing-art" data-art="salt"></span><div><h3>A pinch of sea salt</h3><p>0.2 grams of Cornish salt per can. You won't taste salt. You'll taste more fruit.</p></div></li>
+        </ul>
+      </div>
+      <aside class="facts" aria-label="Nutrition information">
+        <h3>Nutrition</h3>
+        <p class="facts-serve">Per 330 ml can</p>
+        <dl>
+          <div class="big"><dt>Energy</dt><dd id="kcal">19 kcal</dd></div>
+          <div><dt>Sugars, all from fruit</dt><dd id="sugar">3.9 g</dd></div>
+          <div><dt>Added sugar</dt><dd>0 g</dd></div>
+          <div><dt>Sweeteners</dt><dd>None</dd></div>
+          <div><dt>Salt</dt><dd>0.2 g</dd></div>
+          <div><dt>Vitamin C</dt><dd id="vitc">31% of your day</dd></div>
+        </dl>
+        <p class="facts-foot">Ingredients: sparkling water, <span id="ingFruit">whole blood orange (11%)</span>, sea salt.</p>
+      </aside>
+    </section>
+
+    <section class="flavours" id="flavours">
+      <h2>Four flavours. Pick one and the whole page changes its mind.</h2>
+      <div class="lineup" id="lineup"></div>
+    </section>
+
+    <section class="how" id="how">
+      <h2>From tree to can in nine days</h2>
+      <ol class="steps">
+        <li><b>Day 1</b><h3>Picked ripe</h3><p>Our growers in Sicily, Kōchi and the Florida Keys pick to order. Nothing sits in cold storage.</p></li>
+        <li><b>Day 4</b><h3>Pressed whole</h3><p>The fruit is washed and pressed in one piece. Peel oils and pith go in with the juice.</p></li>
+        <li><b>Day 5</b><h3>Fizzed cold</h3><p>We carbonate at 2°C because cold water holds more bubbles, and more bubbles carry more smell.</p></li>
+        <li><b>Day 9</b><h3>At your door</h3><p>Canned in Somerset and posted in a box that fits through a letterbox slot sideways. Mostly.</p></li>
+      </ol>
+    </section>
+
+    <section class="mix" id="mix">
+      <div class="mix-left">
+        <h2>Build a box of 12</h2>
+        <p>Mix any flavours you like. Change the mix or cancel whenever you want.</p>
+        <div class="steppers" id="steppers"></div>
+        <label class="sub"><input type="checkbox" id="sub" checked /><span class="sub-box"></span><span>Send a box every month and take 15% off</span></label>
+      </div>
+      <div class="mix-right">
+        <div class="crate" id="crate" aria-hidden="true"></div>
+        <div class="mix-total">
+          <div><span id="mixCount">12 of 12 cans</span><strong id="mixPrice">£20.40</strong></div>
+          <button class="btn btn-deep" id="addBox" type="button">Add box to basket</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-word" aria-hidden="true">pith</div>
+    <div class="foot-row">
+      <p>Pith Drinks Ltd, The Old Dairy, Frome, Somerset</p>
+      <p>Pith is a concept brand made for a design demo. No cans exist, sadly.</p>
+      <p><a href="mailto:hello@pith.example">hello@pith.example</a></p>
+    </div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

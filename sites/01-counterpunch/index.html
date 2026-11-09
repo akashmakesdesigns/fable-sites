@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Counterpunch Type Co.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&family=Roboto+Flex:opsz,slnt,wdth,wght@8..144,-10..0,25..151,100..1000&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="mark" href="#top" aria-label="Counterpunch home"><span class="mark-c">C</span>ounterpunch</a>
+    <nav>
+      <a href="#catalogue">Typefaces</a>
+      <a href="#tester">Try them</a>
+      <a href="#wall">In use</a>
+      <a href="#licences">Licences</a>
+    </nav>
+    <a class="btn btn-ink" href="#licences">Buy a licence</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Introduction">
+      <h1 class="hero-word" id="heroWord" aria-label="Type that pushes back">
+        <span class="line">Type that</span>
+        <span class="line">pushes back</span>
+      </h1>
+      <div class="hero-foot">
+        <p>Counterpunch is a four-person foundry in Leeds. We draw variable typefaces for people who set a lot of text and notice when it goes wrong. Move your cursor across the headline: every letter carries its full weight and width range.</p>
+        <dl class="hero-facts">
+          <div><dt>Families</dt><dd>4</dd></div>
+          <div><dt>Styles</dt><dd>312</dd></div>
+          <div><dt>Languages</dt><dd>219</dd></div>
+          <div><dt>Founded</dt><dd>2014</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="catalogue" id="catalogue">
+      <header class="sec-head">
+        <h2>Four families, each built around one hard problem</h2>
+        <p>Hover a row to push the typeface to the far end of its design space.</p>
+      </header>
+      <div id="rows"></div>
+    </section>
+
+    <section class="tester" id="tester">
+      <header class="sec-head">
+        <h2>Set your own words</h2>
+        <p>Click the specimen and type. The sliders are the real axes that ship in the font file.</p>
+      </header>
+      <div class="tester-grid">
+        <div class="tester-panel">
+          <div class="tabs" id="tabs" role="tablist" aria-label="Typeface"></div>
+          <div id="sliders"></div>
+          <div class="css-out">
+            <div class="css-head"><span>CSS for this setting</span><button class="copy" id="copy" type="button">Copy CSS</button></div>
+            <pre id="cssOut"></pre>
+          </div>
+        </div>
+        <div class="tester-stage" id="stage">
+          <div class="specimen" id="specimen" contenteditable="true" spellcheck="false" aria-label="Editable specimen text">Jackdaws love my big sphinx of quartz</div>
+          <div class="stage-swatches" id="swatches" aria-label="Specimen colours"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wall" id="wall">
+      <header class="sec-head">
+        <h2>On the wall at the studio</h2>
+        <p>Proof sheets we keep pinned up. Each one is live text, not an image.</p>
+      </header>
+      <div class="wall-grid">
+        <article class="tile t-amp"><span class="glyph">&amp;</span><footer>Quire, Black, Wonk on</footer></article>
+        <article class="tile t-num"><span>0123<br/>4567<br/>89</span><footer>Tally, tabular figures</footer></article>
+        <article class="tile t-para">
+          <h3>A counterpunch is the tool a punchcutter makes first.</h3>
+          <p>It is struck into the end of a steel bar to form the hollow inside a letter, the counter, before any of the outside is filed away. Get the inside wrong and no amount of work on the outline will save the letter. We named the foundry after it because that is still how we draw: the white shapes first.</p>
+          <footer>Quire Text, 18 on 28</footer>
+        </article>
+        <article class="tile t-wide"><span class="stretch">Platform 9</span><span class="stretch narrow">Mind the gap between the train and the platform</span><footer>Gantry, Compressed to Extended</footer></article>
+        <article class="tile t-rg"><span>Rg</span><footer>Hobnail, optical size 96</footer></article>
+        <article class="tile t-code"><pre>fn kern(a: Glyph, b: Glyph) -> i16 {
+  let gap = a.right + b.left;
+  (TARGET - gap).clamp(-80, 40)
+}</pre><footer>Tally Mono, Casual 0</footer></article>
+      </div>
+    </section>
+
+    <section class="licences" id="licences">
+      <header class="sec-head">
+        <h2>Work out your licence</h2>
+        <p>One price covers every style in a family, including the variable font.</p>
+      </header>
+      <form class="calc" id="calc">
+        <fieldset>
+          <legend>Which families?</legend>
+          <div class="chips" id="famChips"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Where will you use them?</legend>
+          <div class="chips" id="useChips"></div>
+        </fieldset>
+        <fieldset>
+          <legend>How many people will install the fonts?</legend>
+          <div class="team">
+            <input type="range" id="team" min="1" max="60" value="5" />
+            <output id="teamOut">5 people</output>
+          </div>
+        </fieldset>
+        <div class="total">
+          <div>
+            <div class="total-label">Your licence</div>
+            <div class="total-sum" id="sum">£0</div>
+            <p class="total-note" id="note"></p>
+          </div>
+          <button class="btn btn-ink btn-lg" type="submit" id="buy">Add licence to basket</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-big" aria-hidden="true">Counterpunch</div>
+    <div class="foot-cols">
+      <div><h4>Studio</h4><p>Unit 4, Marshall's Mill<br/>Holbeck, Leeds LS11 9YJ</p></div>
+      <div><h4>Write to us</h4><p><a href="mailto:hello@counterpunch.example">hello@counterpunch.example</a><br/>Trial fonts are free for students.</p></div>
+      <div><h4>Colophon</h4><p>Counterpunch is a concept foundry made for a design demo. The specimens are set in Bricolage Grotesque, Fraunces, Roboto Flex and Recursive, all open source.</p></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

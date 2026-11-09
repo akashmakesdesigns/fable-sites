@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nadir Lodge. A dark-sky lodge in the Elqui Valley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/index-C24vBnxp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DQ2jcNx7.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor"/><circle cx="12" cy="19" r="1.6" fill="currentColor"/></svg>Nadir Lodge</a>
+    <nav>
+      <a href="#tonight">Tonight's sky</a>
+      <a href="#dark">How dark</a>
+      <a href="#night">A night here</a>
+      <a href="#cabins">Cabins</a>
+    </nav>
+    <a class="pill" href="#book">Check new-moon dates</a>
+    <button class="redlight" id="red" type="button" aria-pressed="false" title="Astronomers read by red light because it doesn't spoil night vision">Red light</button>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-sticky">
+        <canvas id="sky" aria-hidden="true"></canvas>
+        <svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <defs><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0a66b" stop-opacity="0"/><stop offset="1" stop-color="#f0a66b" stop-opacity=".28"/></linearGradient></defs>
+          <rect x="0" y="120" width="1600" height="300" fill="url(#glow)"/>
+          <path d="M0 300 L120 250 L210 276 L330 190 L420 238 L520 150 L600 205 L700 120 L790 196 L880 160 L980 232 L1090 148 L1180 214 L1290 176 L1400 246 L1500 204 L1600 256 L1600 420 L0 420Z" fill="#141a45"/>
+          <path d="M0 360 L160 318 L300 340 L460 286 L640 332 L800 300 L900 320 L1010 296 L1090 306 L1230 280 L1400 326 L1600 300 L1600 420 L0 420Z" fill="#090d28"/>
+          <g transform="translate(1010 268)">
+            <path d="M0 30 L0 12 L22 0 L44 12 L44 30Z" fill="#05071a"/>
+            <rect x="15" y="14" width="13" height="10" fill="#f0a66b"/>
+            <path d="M60 30 A14 14 0 0 1 88 30Z" fill="#05071a"/>
+            <rect x="72" y="14" width="3" height="8" fill="#090d28"/>
+          </g>
+        </svg>
+        <div class="hero-copy">
+          <h1>The darkest night you can sleep under</h1>
+          <p>Six cabins and a 60 cm telescope at 2,640 metres in Chile's Elqui Valley. No street lamp for 70 kilometres. Keep scrolling and the shutter stays open.</p>
+        </div>
+        <div class="exposure" aria-hidden="true"><span>Exposure</span><b id="expo">1 s</b></div>
+        <dl class="hero-facts">
+          <div><dt>Sky quality</dt><dd>21.9 mag/arcsec²</dd></div>
+          <div><dt>Clear nights a year</dt><dd>308</dd></div>
+          <div><dt>Altitude</dt><dd>2,640 m</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="tonight" id="tonight">
+      <div class="tonight-moon">
+        <svg id="moon" viewBox="0 0 200 200" role="img" aria-label="Tonight's moon phase"></svg>
+      </div>
+      <div class="tonight-copy">
+        <p class="kicker" id="dateLine"></p>
+        <h2 id="moonTitle">Tonight above the lodge</h2>
+        <p id="moonText" class="lede"></p>
+        <dl class="readout">
+          <div><dt>Moon lit</dt><dd id="rLit"></dd></div>
+          <div><dt>Days to new moon</dt><dd id="rNew"></dd></div>
+          <div><dt>Hours of full darkness</dt><dd id="rDark"></dd></div>
+          <div><dt>Worth staying up for</dt><dd id="rTarget"></dd></div>
+        </dl>
+        <p class="fine">Worked out in your browser from today's date, for latitude 30° south. The moon is drawn the way it looks from the southern hemisphere, which is upside down if you grew up in the north.</p>
+      </div>
+    </section>
+
+    <section class="dark" id="dark">
+      <div class="dark-head">
+        <h2>Drag from your street to ours</h2>
+        <p>Astronomers grade the night on the Bortle scale, from 9 in a city centre to 1 where the Milky Way casts a shadow. Each point on this picture is a star you could see without a telescope.</p>
+      </div>
+      <div class="dark-frame">
+        <canvas id="bortle" aria-hidden="true"></canvas>
+        <div class="dark-read">
+          <div><span>Bortle class</span><b id="bClass">9</b></div>
+          <div><span id="bName">Inner city</span><b id="bCount">about 220 stars</b></div>
+        </div>
+      </div>
+      <div class="dark-slider">
+        <span>City centre</span>
+        <input type="range" id="bSlider" min="0" max="800" value="0" aria-label="Sky darkness, from city centre to Nadir Lodge" />
+        <span>Nadir Lodge</span>
+      </div>
+    </section>
+
+    <section class="night" id="night">
+      <h2>One night, hour by hour</h2>
+      <div class="night-band" id="band">
+        <ol class="night-list">
+          <li><time>19:40</time><h3>Sunset from the terrace</h3><p>A pisco sour and the green flash, if the horizon is clean. White lights go off across the site at 20:15.</p></li>
+          <li><time>21:00</time><h3>The sky without a telescope</h3><p>Forty minutes on a reclining bench while your eyes adjust. Our guides, Inés and Tomás, point out the Southern Cross, the Coalsack and both Magellanic Clouds.</p></li>
+          <li><time>22:30</time><h3>The 60 cm telescope</h3><p>Four objects, chosen for the month. Tonight's list is on the board in the dining room by six.</p></li>
+          <li><time>01:00</time><h3>Your own photograph</h3><p>Bring a camera or borrow one of ours. We track the mount, you choose the frame, and you leave with the raw files.</p></li>
+          <li><time>05:20</time><h3>Zodiacal light, then bed</h3><p>A faint cone of dust-lit sky before dawn. Breakfast runs until noon because nobody here gets up early.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cabins" id="cabins">
+      <div class="cabins-head">
+        <h2>Six cabins, three kinds</h2>
+        <p>Every cabin has a wood stove, blackout shutters for sleeping past sunrise, and a red reading lamp.</p>
+      </div>
+      <div class="cabin-list" id="cabinList"></div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="book-head">
+        <h2>Come when the moon is away</h2>
+        <p>The five nights around each new moon are the darkest of the month. These are the next six, worked out from today.</p>
+      </div>
+      <ul class="moons" id="moons"></ul>
+      <p class="hold-msg" id="holdMsg" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>
+      <p class="foot-name">Nadir Lodge</p>
+      <p>Camino a Cochiguaz km 14, Paihuano, Coquimbo, Chile<br/>30.11° S, 70.49° W</p>
+    </div>
+    <p>Nadir Lodge is a concept made for a design demo. The moon and the new-moon dates are real.</p>
+    <p><a href="mailto:stay@nadir.example">stay@nadir.example</a></p>
+  </footer>
+</body>
+</html>

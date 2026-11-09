@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oriel 38 Automatic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">Oriel</a>
+    <nav>
+      <a href="#stage">Inside the 38</a>
+      <a href="#spec">Specification</a>
+      <a href="#care">Service</a>
+    </nav>
+    <a class="reserve" href="#reserve">Reserve one</a>
+  </header>
+
+  <main id="top">
+    <section class="stage" id="stage" aria-label="The Oriel 38, taken apart as you scroll">
+      <div class="sticky">
+        <canvas id="gl"></canvas>
+        <div class="labels" id="labels" aria-hidden="true"></div>
+
+        <div class="cap cap-hero" data-in="0" data-out="0.075">
+          <h1>Oriel 38<br/><em>Automatic</em></h1>
+          <p>A mechanical watch you can take apart with your eyes. Scroll to open the case.</p>
+        </div>
+
+        <div class="cap cap-left" data-in="0.17" data-out="0.30">
+          <h2>112 parts, and nothing we'd rather you didn't see</h2>
+          <p>Most watches hide the work behind a steel back. We'd sooner show you every layer, in the order our watchmaker puts them together.</p>
+        </div>
+
+        <div class="cap cap-right" data-in="0.335" data-out="0.445">
+          <h2>Sapphire, domed and coated on one side</h2>
+          <p>The crystal is 2.4 mm of sapphire, second only to diamond for hardness. The anti-glare coating goes on the inside face only, where nothing can scratch it.</p>
+          <dl><div><dt>Hardness</dt><dd>9 Mohs</dd></div><div><dt>Bezel</dt><dd>316L steel</dd></div></dl>
+        </div>
+
+        <div class="cap cap-left" data-in="0.475" data-out="0.585">
+          <h2>A dial brushed from the centre out</h2>
+          <p>Each brass blank is spun against a wire wheel so the light fans across it as you turn your wrist. The twelve markers are cut, polished and pinned on by hand.</p>
+          <p class="aside">The hands on this page are showing your time: <b id="clock">10:09:30</b></p>
+        </div>
+
+        <div class="cap cap-right" data-in="0.615" data-out="0.725">
+          <h2>Calibre OR-1</h2>
+          <p>Our own automatic movement, running now on your screen at its real rate. The balance swings eight times a second and will go on doing it for 68 hours off your wrist.</p>
+          <dl><div><dt>Jewels</dt><dd>27</dd></div><div><dt>Beat</dt><dd>4 Hz</dd></div><div><dt>Reserve</dt><dd>68 h</dd></div></dl>
+        </div>
+
+        <div class="cap cap-left" data-in="0.755" data-out="0.865">
+          <h2>Wound by the way you walk</h2>
+          <p>A tungsten rotor swings on ceramic bearings and winds the mainspring in both directions. You can watch it through the sapphire back.</p>
+          <dl><div><dt>Rotor</dt><dd>Tungsten</dd></div><div><dt>Water</dt><dd>100 m</dd></div></dl>
+        </div>
+
+        <div class="cap cap-end" data-in="0.915" data-out="1">
+          <h2>Closed, it's 10.9 mm thin</h2>
+          <p>Choose a dial.</p>
+          <div class="dials" id="dials" role="radiogroup" aria-label="Dial colour"></div>
+          <p class="price"><b>£2,450</b> <span id="dialName">Salmon dial, chestnut strap</span></p>
+          <a class="reserve big" href="#reserve">Reserve one</a>
+        </div>
+
+        <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
+        <div class="hint" id="hint" aria-hidden="true">Scroll</div>
+      </div>
+    </section>
+
+    <section class="spec" id="spec">
+      <h2>Specification</h2>
+      <div class="spec-grid">
+        <dl>
+          <div><dt>Case</dt><dd>38 mm across, 46 mm lug to lug, 10.9 mm thick</dd></div>
+          <div><dt>Steel</dt><dd>316L, brushed sides and a polished bezel</dd></div>
+          <div><dt>Crystal</dt><dd>Domed sapphire front, flat sapphire back</dd></div>
+          <div><dt>Water resistance</dt><dd>100 metres, screw-down crown</dd></div>
+        </dl>
+        <dl>
+          <div><dt>Movement</dt><dd>Calibre OR-1, automatic, 27 jewels</dd></div>
+          <div><dt>Accuracy</dt><dd>Regulated to between −2 and +4 seconds a day</dd></div>
+          <div><dt>Power reserve</dt><dd>68 hours</dd></div>
+          <div><dt>Strap</dt><dd>20 mm vegetable-tanned leather, quick-release bars</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="care" id="care">
+      <div class="care-fig" aria-hidden="true"><span>25</span></div>
+      <div>
+        <h2>Guaranteed for twenty-five years, and serviced by the person who built it</h2>
+        <p>Every Oriel is assembled start to finish by one watchmaker in our Sheffield workshop, and their initials are engraved under the rotor. When it comes back for a service, in six years or so, it goes back to the same bench.</p>
+        <p>We keep parts for every calibre we have ever made. If we stop making a part, we publish the drawing.</p>
+      </div>
+    </section>
+
+    <section class="reserve-sec" id="reserve">
+      <h2>The next batch of sixty ships in March</h2>
+      <p>Put down £200 to hold a number. The rest is due when your watch is on the bench, and you can have the deposit back any time before then.</p>
+      <form id="form" novalidate>
+        <label for="email">Email address</label>
+        <div class="field">
+          <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <button type="submit">Hold my number</button>
+        </div>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="brand">Oriel</span>
+    <span>Oriel Watch Company, 14 Cutlers' Yard, Sheffield</span>
+    <span>A concept brand made for a design demo. The watch is modelled in code and drawn live in your browser.</span>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

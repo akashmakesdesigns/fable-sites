@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tacta 75. A mechanical keyboard, layer by layer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800;900&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body data-way="canteen">
+  <header class="nav">
+    <a class="brand" href="#top">tacta</a>
+    <nav>
+      <a href="#stage">Layers</a>
+      <a href="#test">Typing test</a>
+      <a href="#box">In the box</a>
+    </nav>
+    <button class="sound" id="sound" type="button" aria-pressed="false">Turn sound on</button>
+    <a class="buy" href="#order">Order, £189</a>
+  </header>
+
+  <main id="top">
+    <section class="stage" id="stage" aria-label="The Tacta 75, taken apart as you scroll">
+      <div class="sticky">
+        <canvas id="gl"></canvas>
+        <div class="labels" id="labels" aria-hidden="true"></div>
+
+        <div class="cap cap-hero" data-in="0" data-out="0.07">
+          <h1>Tacta 75</h1>
+          <p>A keyboard you build once and keep. Type on your own keys now and watch ours follow.</p>
+        </div>
+
+        <div class="cap cap-left" data-in="0.165" data-out="0.30">
+          <h2>Seven layers between your finger and the desk</h2>
+          <p>Every one of them changes how a key feels and sounds. Scroll on and we'll take them one at a time.</p>
+        </div>
+
+        <div class="cap cap-right" data-in="0.335" data-out="0.445">
+          <h2>Keycaps that never go shiny</h2>
+          <p>They're PBT plastic with walls 1.5 mm thick, and the legends are dyed into the cap instead of printed on top. Nothing to wear off.</p>
+          <dl><div><dt>Keys</dt><dd>84</dd></div><div><dt>Profile</dt><dd>Cherry</dd></div></dl>
+        </div>
+
+        <div class="cap cap-left" data-in="0.475" data-out="0.585">
+          <h2>Switches you can pull out and swap</h2>
+          <p>Each switch pushes into a socket, so changing the feel of the board takes a keycap puller and ten minutes. It ships with linear switches, oiled at the factory.</p>
+          <dl><div><dt>Force</dt><dd>45 g</dd></div><div><dt>Travel</dt><dd>3.6 mm</dd></div><div><dt>Rated</dt><dd>80 m presses</dd></div></dl>
+        </div>
+
+        <div class="cap cap-right" data-in="0.615" data-out="0.725">
+          <h2>A plate that floats</h2>
+          <p>The brass plate hangs on ten silicone strips and never touches the case. Each press lands softer, and the sound gets deeper.</p>
+          <dl><div><dt>Plate</dt><dd>Brass, 1.5 mm</dd></div><div><dt>Mount</dt><dd>Gasket</dd></div></dl>
+        </div>
+
+        <div class="cap cap-left" data-in="0.755" data-out="0.86">
+          <h2>One board, three computers</h2>
+          <p>Pair it with three devices over Bluetooth, use the 2.4 GHz dongle for games, or plug in the cable. There's a light under every key and the firmware is open source.</p>
+          <dl><div><dt>Wired</dt><dd>1 ms</dd></div><div><dt>Battery</dt><dd>6 weeks</dd></div></dl>
+        </div>
+
+        <div class="cap cap-end" data-in="0.915" data-out="1">
+          <h2>Pick your colours</h2>
+          <div class="ways" id="ways" role="radiogroup" aria-label="Colourway"></div>
+          <p class="price"><b>£189</b> <span id="wayName">Canteen</span></p>
+          <a class="buy big" href="#order">Order a Tacta 75</a>
+        </div>
+
+        <div class="rail" aria-hidden="true"><i id="railFill"></i></div>
+      </div>
+    </section>
+
+    <section class="test" id="test">
+      <div class="test-head">
+        <h2>How fast are you on the keyboard you have now?</h2>
+        <p>Click the box and type the sentence. We'll time you.</p>
+      </div>
+      <div class="test-box" id="testBox" tabindex="0" role="textbox" aria-label="Typing test. Click here and type the sentence shown.">
+        <p class="test-line" id="testLine"></p>
+        <p class="test-hint" id="testHint">Click here, then start typing</p>
+      </div>
+      <dl class="test-stats">
+        <div><dt>Words a minute</dt><dd id="wpm">0</dd></div>
+        <div><dt>Accuracy</dt><dd id="acc">100%</dd></div>
+        <div><dt>Time</dt><dd id="secs">0.0 s</dd></div>
+        <div><button type="button" id="again">Try another sentence</button></div>
+      </dl>
+    </section>
+
+    <section class="box" id="box">
+      <h2>In the box</h2>
+      <ul>
+        <li><b>1</b><span>Tacta 75 keyboard, assembled and tested</span></li>
+        <li><b>84</b><span>keycaps, plus 9 spares in the accent colour</span></li>
+        <li><b>1.8 m</b><span>braided USB-C cable</span></li>
+        <li><b>1</b><span>2.4 GHz dongle, stored under the knob side</span></li>
+        <li><b>2</b><span>pullers, one for keycaps and one for switches</span></li>
+        <li><b>5</b><span>spare switches, because you'll bend a pin one day</span></li>
+      </ul>
+    </section>
+
+    <section class="order" id="order">
+      <h2>£189, posted free in the UK</h2>
+      <p>Orders placed this week leave our Bristol workshop within five working days. Send it back within 30 days if your fingers disagree.</p>
+      <button class="buy big" id="orderBtn" type="button">Add Tacta 75 to basket</button>
+      <p class="order-msg" id="orderMsg" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="brand">tacta</span>
+    <span>Tacta Keyboards, 9 Paintworks, Bristol</span>
+    <span>A concept product made for a design demo. The keyboard is modelled in code and drawn live in your browser.</span>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

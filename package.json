@@ -1,0 +1,19 @@
+{
+  "name": "fable-sites",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:1": "SITE=01-counterpunch vite --port 5181 --strictPort",
+    "dev:2": "SITE=02-pith vite --port 5182 --strictPort",
+    "dev:3": "SITE=03-nadir vite --port 5183 --strictPort",
+    "dev:4": "SITE=04-oriel vite --port 5184 --strictPort",
+    "dev:5": "SITE=05-tacta vite --port 5185 --strictPort",
+    "build": "for s in 01-counterpunch 02-pith 03-nadir 04-oriel 05-tacta; do SITE=$s vite build || exit 1; done && cp landing.html docs/index.html && touch docs/.nojekyll"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "three": "^0.169.0"
+  }
+}
